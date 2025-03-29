@@ -30,17 +30,21 @@ namespace YourNamespace.Controllers // Replace 'YourNamespace' with your actual 
             }
         }
 
-        // Bad Factorial.
-        private int Factorial(int number)
+        // Optimized Factorial.
+        private long Factorial(int number)
         {
-            if (number < 0) return -1; // Poor handling of negative input
-            if (number == 0) return 1;
+            if (number < 0)
+            {
+                throw new ArgumentException("Factorial is not defined for negative numbers.");
+            }
 
-            int result = 1;
+            long result = 1;
             for (int i = 1; i <= number; i++)
             {
-                result *= i;
-                if (result == 0) return -1; // Poor handling of overflow
+                checked // Detect overflow
+                {
+                    result *= i;
+                }
             }
             return result;
         }
