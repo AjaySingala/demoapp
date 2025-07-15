@@ -43,7 +43,7 @@ app.MapGet("/weatherforecast", () =>
 
 app.MapGet("/test", () =>
 {
-    var dummy = new[] {"One", "Two", "Tri", "For" };
+    var dummy = new[] {"One", "Two", "Tri" };
     return dummy;
 })
 .WithName("GetTest");
