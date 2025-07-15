@@ -41,6 +41,12 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+app.MapGet("/test", () =>
+{
+    return new[] = {"One", "Two", "Tri", "For" };
+})
+.WithName("GetTest");
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
